@@ -147,7 +147,7 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
   ```
 
 ### Print do breakpoint
-![Breakpoint debug 1](debug 1.png)
+![Breakpoint debug 1](debug1.png)
 ![console debug 2](debug 2.png)
 ![network debug 3](debug 3.png)
 ![network debug 3](debug 3.1.png)
