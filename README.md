@@ -56,16 +56,24 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
 
 > Preencham com os bugs **reais** que aconteceram no desenvolvimento. Mínimo de 3 erros, sendo pelo menos 1 de lógica, 1 print de breakpoint (com Scope ou Watch visível) e 1 investigado pela aba Network.
 
-### Bug 1 — [título curto]
-- **Mensagem do console ou sintoma:** [cole aqui]
-- **Como foi identificado:** [console.log / breakpoint / Watch / Scope / aba Network]
+### Bug 1 — Texto do botão de tema não muda
+- **Mensagem do console ou sintoma:** ao clicar em "Modo escuro", o fundo da página escurece, mas o botão continua escrito "Modo escuro". Ao recarregar a página já no tema escuro, o texto também continua errado. Nenhum erro aparece no Console.
+- **Como foi identificado:** breakpoint + Watch.
 - **Antes:**
   ```js
   // trecho com o erro
+  function aplicarTema() {
+  document.body.classList.toggle("escuro", localStorage.getItem("tema") === "escuro");
+  }
   ```
 - **Depois:**
   ```js
   // trecho corrigido
+  function aplicarTema() {
+  const escuro = localStorage.getItem("tema") === "escuro";
+  document.body.classList.toggle("escuro", escuro);
+  document.querySelector(".tema").textContent = escuro ? "Modo claro" : "Modo escuro";
+  }
   ```
 
 ### Bug 2 — [título curto] (lógica: o código rodava, mas o resultado estava errado)
