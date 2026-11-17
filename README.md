@@ -94,16 +94,56 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
   filtrarFavoritos(); // respeita o checkbox "Somente favoritos"
   ```
 
-### Bug 3 — [título curto] (investigado na aba Network)
-- **Sintoma:** [ex.: 404, URL errada, body sem JSON.stringify]
-- **Como foi identificado:** aba Network — [o que aparecia: status, request, response]
+### Bug 3 — Busca por ingrediente usa o endpoint errado (investigado na aba Network)
+- **Sintoma:** a página diz "Buscar por ingrediente ou prato", mas ao digitar um ingrediente que não aparece no nome de nenhum prato (ex.: paprika), aparece "Nenhuma receita encontrada."
+- **Como foi identificado:** aba Network - A requisição retornava o status code 200, mas a URL usava o endpoint de busca por nome ( ```search.php?s= ```), e a resposta vinha vazia.  ```{"meals":null} ```
 - **Antes:**
   ```js
   // trecho com o erro
+  const API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+  // ...
+  async function carregarReceitas(termo = "chicken") {
+  const mensagem = document.getElementById("mensagem");
+  mensagem.textContent = "Carregando...";
+  try {
+    const resposta = await fetch(API_URL + encodeURIComponent(termo));
+    if (!resposta.ok) throw new Error("Erro na API.");
+    const dados = await resposta.json();
+    listaDeReceitas = dados.meals || [];
+    mensagem.textContent = listaDeReceitas.length ? "Receitas carregadas." : "Nenhuma receita encontrada.";
+    mostrarCartoes(listaDeReceitas);
+  } catch (erro) {
+    mensagem.textContent = "Erro ao carregar. Tente novamente mais tarde.";
+    }
+  }
   ```
 - **Depois:**
   ```js
   // trecho corrigido
+  const API_BASE = "https://www.themealdb.com/api/json/v1/1/";
+
+  async function buscarNaApi(endpoint, termo) {
+  const resposta = await fetch(API_BASE + endpoint + encodeURIComponent(termo));
+  if (!resposta.ok) throw new Error("Erro na API: " + resposta.status);
+  const dados = await resposta.json();
+  return dados.meals || [];
+  }
+
+  async function carregarReceitas(termo = "chicken") {
+  const mensagem = document.getElementById("mensagem");
+  mensagem.textContent = "Carregando...";
+
+  try {
+    listaDeReceitas = await buscarNaApi("search.php?s=", termo);
+    if (!listaDeReceitas.length) {
+      listaDeReceitas = await buscarNaApi("filter.php?i=", termo);
+    }
+    mensagem.textContent = listaDeReceitas.length ? "Receitas carregadas." : "Nenhuma receita encontrada.";
+    filtrarFavoritos();
+  } catch (erro) {
+    mensagem.textContent = "Erro ao carregar. Tente novamente mais tarde.";
+  }
+  }
   ```
 
 ### Print do breakpoint
