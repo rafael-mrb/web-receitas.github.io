@@ -77,7 +77,7 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
   ```
 
 ### Bug 2 — Filtro "Somente favoritos" some depois de uma nova busca
-- **Sintoma:**  com a caixa "Somente favoritos" marcada, a página mostra só as receitas favoritadas. Ao digitar uma nova busca e apaga-la, aparecem todas as receitas, mesmo com a caixa ainda marcada. O código roda sem erro, mas o resultado está errado.
+- **Sintoma:**  com a caixa "Somente favoritos" marcada, a página mostra só as receitas favoritadas. Ao digitar uma nova busca, aparecem todas as receitas, mesmo com a caixa ainda marcada. O código roda sem erro, mas o resultado está errado.
 - **Como foi identificado:** console.log dentro de mostrarCartoes
 - **Antes:**
   ```js
