@@ -76,16 +76,22 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
   }
   ```
 
-### Bug 2 — [título curto] (lógica: o código rodava, mas o resultado estava errado)
-- **Sintoma:** [descreva]
-- **Como foi identificado:** [descreva]
+### Bug 2 — Filtro "Somente favoritos" some depois de uma nova busca
+- **Sintoma:**  com a caixa "Somente favoritos" marcada, a página mostra só as receitas favoritadas. Ao digitar uma nova busca e apaga-la, aparecem todas as receitas, mesmo com a caixa ainda marcada. O código roda sem erro, mas o resultado está errado.
+- **Como foi identificado:** console.log dentro de mostrarCartoes
 - **Antes:**
   ```js
   // trecho com o erro
+  listaDeReceitas = dados.meals || [];
+  mensagem.textContent = listaDeReceitas.length ? "Receitas carregadas." : "Nenhuma receita encontrada.";
+  mostrarCartoes(listaDeReceitas);
   ```
 - **Depois:**
   ```js
   // trecho corrigido
+  listaDeReceitas = dados.meals || [];
+  mensagem.textContent = listaDeReceitas.length ? "Receitas carregadas." : "Nenhuma receita encontrada.";
+  filtrarFavoritos(); // respeita o checkbox "Somente favoritos"
   ```
 
 ### Bug 3 — [título curto] (investigado na aba Network)
