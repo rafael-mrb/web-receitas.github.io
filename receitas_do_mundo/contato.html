@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabores do Mundo | Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Sabores do Mundo</a>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="explorar.html">Receitas</a>
+      <a href="ferramentas.html">Ferramentas</a>
+      <a class="ativo" href="contato.html">Contato</a>
+    </nav>
+    <button class="botao tema" type="button">Modo escuro</button>
+  </header>
+
+  <main>
+    <section>
+      <h1>Conte sua receita favorita</h1>
+      <form id="formContato" class="painel">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" required>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required>
+        <label for="mensagemContato">Mensagem</label>
+        <textarea id="mensagemContato" name="mensagem" required></textarea>
+        <button class="botao" type="submit">Enviar</button>
+        <p id="retornoFormulario" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>Sabores do Mundo — atividade acadêmica</footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabores do Mundo | Ferramentas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Sabores do Mundo</a>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="explorar.html">Receitas</a>
+      <a class="ativo" href="ferramentas.html">Ferramentas</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="botao tema" type="button">Modo escuro</button>
+  </header>
+
+  <main>
+    <section>
+      <h1>Ferramentas</h1>
+      <article class="painel">
+        <h2>Calculadora de porções</h2>
+        <p>Use as operações para ajustar a quantidade de ingredientes.</p>
+        <label for="numeroA">Quantidade atual</label><input id="numeroA" type="number" value="10">
+        <label for="numeroB">Número de porções</label><input id="numeroB" type="number" value="2">
+        <div class="acoes">
+          <button class="botao operacao" data-operacao="somar">Somar</button>
+          <button class="botao operacao" data-operacao="subtrair">Subtrair</button>
+          <button class="botao operacao" data-operacao="multiplicar">Multiplicar</button>
+          <button class="botao operacao" data-operacao="dividir">Dividir</button>
+        </div>
+        <p id="resultado">Resultado: —</p>
+      </article>
+      <article class="painel">
+        <h2>Estatística de favoritos</h2>
+        <p id="estatistica">Abra a página Receitas e favorite alguns pratos.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>Sabores do Mundo — atividade acadêmica</footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

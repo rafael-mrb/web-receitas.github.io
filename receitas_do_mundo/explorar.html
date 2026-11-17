@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabores do Mundo | Receitas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Sabores do Mundo</a>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a class="ativo" href="explorar.html">Receitas</a>
+      <a href="ferramentas.html">Ferramentas</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="botao tema" type="button">Modo escuro</button>
+  </header>
+
+  <main>
+    <section>
+      <p class="destaque">Dados reais da TheMealDB</p>
+      <h1>Explorar receitas</h1>
+      <div class="filtros">
+        <label for="busca">Buscar por ingrediente ou prato</label>
+        <input id="busca" type="search" placeholder="Ex.: chicken">
+        <label><input id="somenteFavoritos" type="checkbox"> Somente favoritos</label>
+      </div>
+      <p id="mensagem" role="status">Carregando...</p>
+      <div id="listaReceitas" class="grade-cartoes"></div>
+    </section>
+  </main>
+
+  <footer>Sabores do Mundo — atividade acadêmica</footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
