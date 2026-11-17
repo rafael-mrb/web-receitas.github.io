@@ -3,8 +3,8 @@
 Projeto Final · RA 3 — Site de receitas feito com HTML, CSS e JavaScript.
 
 - **Tema:** Receitas
-- **Site publicado (GitHub Pages):** [[COLE AQUI O LINK]](https://rafael-mrb.github.io/web-receitas.github.io/)
-- **Repositório:** [[COLE AQUI O LINK](https://github.com/rafael-mrb/web-receitas.github.io)]
+- **Site publicado (GitHub Pages):** https://rafael-mrb.github.io/web-receitas.github.io/
+- **Repositório:** https://github.com/rafael-mrb/web-receitas.github.io
 
 ## Integrantes e responsabilidades
 
