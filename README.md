@@ -3,8 +3,8 @@
 Projeto Final · RA 3 — Site de receitas feito com HTML, CSS e JavaScript.
 
 - **Tema:** Receitas
-- **Site publicado (GitHub Pages):** [COLE AQUI O LINK]
-- **Repositório:** [COLE AQUI O LINK]
+- **Site publicado (GitHub Pages):** [[COLE AQUI O LINK]](https://rafael-mrb.github.io/web-receitas.github.io/)
+- **Repositório:** [[COLE AQUI O LINK](https://github.com/rafael-mrb/web-receitas.github.io)]
 
 ## Integrantes e responsabilidades
 
@@ -147,9 +147,14 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
   ```
 
 ### Print do breakpoint
+#### Debug 1 - Breakpoint
 ![Breakpoint debug 1](debug_1.png)
+
+#### Debug 2 - Console
 ![console debug 2](debug_2.png)
 ![network debug 3](debug_3.png)
+
+#### Debug 3 - Network
 ![network debug 3](debug_3_1.png)
 
 ## Como rodar localmente
