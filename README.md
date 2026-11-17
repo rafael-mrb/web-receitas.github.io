@@ -148,9 +148,9 @@ Ferramenta ligada ao tema: **calculadora de porções** e **estatísticas dos fa
 
 ### Print do breakpoint
 ![Breakpoint debug 1](debug_1.png)
-![console debug 2](debug 2.png)
-![network debug 3](debug 3.png)
-![network debug 3](debug 3.1.png)
+![console debug 2](debug_2.png)
+![network debug 3](debug_3.png)
+![network debug 3](debug_3_1.png)
 
 ## Como rodar localmente
 
